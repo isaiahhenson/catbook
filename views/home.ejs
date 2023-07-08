@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Gallery</title>
+    <!--TODO Add stylesheet-->
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/upload">Upload</a>
+            </li>
+        </ul>
+    </div>
+    <% cats.forEach(cat=> { %>
+        <div>
+            <div>
+                <h5>
+                    <% cat.name %>
+                </h5>
+                <p>
+                    Age: <% cat.age %> <br>
+                        Favorite food: <% cat.favoritefood %> <br>
+                            Fun fact: <% cat.funFact %>
+                </p>
+            </div>
+        </div>
+        <div>
+            <a href="/edit/<%= cat._id%>">Edit</a>
+            <form action="/delete/<%= cat._id%>"
+            method="POST">
+            <button type="submit">Delete</button>
+        </form>
+        </div>
+        })
+</body>
+
+</html>

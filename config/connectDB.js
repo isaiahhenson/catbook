@@ -8,4 +8,4 @@ const connectDB = async () => {
     }
 } 
 
-mondule.exports = connectDB
+module.exports = connectDB
